@@ -23,7 +23,7 @@ export const RESUME_DATA = {
   name: "WAQAS YOUNIS",
   initials: "WY",
   location: "St. John's, NL, CA",
-  // locationLink: "https://www.google.com/maps/place/Wrocław",
+  locationLink: "https://www.google.com/maps/place/St.+John's,+NL",
   about:
     "Software Engineer focused on building products with extra attention to detail",
   summary:
@@ -32,7 +32,7 @@ export const RESUME_DATA = {
   personalWebsiteUrl: "https://waqasyounis.com",
   contact: {
     email: "waqasyounis334@gmail.com",
-    // tel: "+48530213401",
+    tel: "",
     social: [
       {
         name: "GitHub",
@@ -79,7 +79,7 @@ export const RESUME_DATA = {
     },
     {
       company: "Self-employeed",
-      // link: "https://clevertech.biz",
+      link: "https://waqasyounis.com",
       badges: ["Indie"],
       title: "Android App Developer",
       logo: ClevertechLogo,
