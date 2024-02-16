@@ -130,6 +130,22 @@ export const RESUME_DATA = {
         href: "https://github.com/waqas-334/MemeMakerReborn",
       },
     },
+
+    {
+      title: "Vokab",
+      techStack: ["Side Project", "Flutter", "Dart"],
+      description:
+        "A tiny app to help build better vocabulary by making use proven strategies like Spaced Repetition.",
+      logo: JarockiMeLogo,
+      link: {
+        label: "website",
+        href: "https://vokab.pro",
+      },
+    },
+
+
+
+
     {
       title: "Avatarist",
       techStack: ["Side Project", "Flutter", "Dart"],
