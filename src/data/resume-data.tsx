@@ -27,7 +27,7 @@ export const RESUME_DATA = {
   about:
     "Software Engineer focused on building products with extra attention to detail",
   summary:
-    "As a Software, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with Android, Flutter, and Python. I have over 5 years of experience working indivially as a mobile app developer.",
+    "I am an accomplished Software Engineer with a track record of successfully launching multiple products from concept to execution. I excel in leading teams, fostering an environment where individuals can thrive and deliver their best work. My expertise lies primarily in Android, Flutter, and Python, and I have over 5 years of experience as a mobile app developer.",
   avatarUrl: "https://avatars.githubusercontent.com/u/86519858?v=4",
   personalWebsiteUrl: "https://waqasyounis.com",
   contact: {
@@ -208,6 +208,23 @@ export const RESUME_DATA = {
       link: {
         label: "github.com",
         href: "https://github.com/waqas-334/MVVM-TODO-Android-app",
+      },
+    },
+    {
+      title: "Calculator Vault",
+      techStack: [
+        "Indie Project",
+
+        "Android",
+        "Java",
+        "Kotlin",
+      ],
+      description:
+        "A Vault disguised as calculator to hide your \"private\" photos",
+      logo: EvercastLogo,
+      link: {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.androidbull.calculator.photo.vault",
       },
     },
   ],
