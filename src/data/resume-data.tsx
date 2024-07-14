@@ -123,7 +123,7 @@ export const RESUME_DATA = {
       title: "MemeBox",
       techStack: ["Side Project", "Android", "Firebase", "Kotlin", "Java"],
       description:
-        "A real-time meme generation app for interactive humor and social engagement.",
+        "A meme generation app for interactive humor and social engagement.",
       logo: MonitoLogo,
       link: {
         label: "github",
@@ -135,7 +135,7 @@ export const RESUME_DATA = {
       title: "Vokab",
       techStack: ["Side Project", "Flutter", "Dart"],
       description:
-        "A tiny app to help build better vocabulary by making use proven strategies like Spaced Repetition.",
+        "A tiny app to help build better vocabulary by using proven strategies like Spaced Repetition.",
       logo: JarockiMeLogo,
       link: {
         label: "website",
@@ -225,6 +225,23 @@ export const RESUME_DATA = {
       link: {
         label: "Google Play",
         href: "https://play.google.com/store/apps/details?id=com.androidbull.calculator.photo.vault",
+      },
+    },
+    {
+      title: "IndieCircle",
+      techStack: [
+        "Indie Project",
+
+        "Java Spring",
+        "React",
+        "GCP",
+      ],
+      description:
+        "An online community to connect indie devs to share their projects and gain followers and potential collaborators",
+      logo: EvercastLogo,
+      link: {
+        label: "IndieCircle",
+        href: "https://indiecircle.io",
       },
     },
   ],
