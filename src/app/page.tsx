@@ -21,7 +21,7 @@ export default function Page() {
       <Script
         id="gtm-script" 
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-EMVCE3SZQ4`}
       />
       <Script
        id="gtm-script-2" 
@@ -30,7 +30,7 @@ export default function Page() {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+                    gtag('config', 'G-EMVCE3SZQ4', {
                     page_path: window.location.pathname,
                     });
                 `}
