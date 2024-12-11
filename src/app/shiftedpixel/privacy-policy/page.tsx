@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy for Police Pursuit`,
+  title: `Privacy Policy | SHIFTEDPIXEL`,
   description: "Privacy Policy",
 };
 
