@@ -34,7 +34,9 @@ export default function PrivacyPolicy() {
           <br />
           <br />
         </p>
-        This data includes:
+        <p className="text-pretty font-mono text-sm text-muted-foreground">
+          <b>This data includes:</b>
+        </p>
         <ul className="text-pretty font-mono text-sm text-muted-foreground">
           <li>• Device information (e.g., device type, operating system).</li>{" "}
           <li>
