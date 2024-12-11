@@ -15,12 +15,13 @@ export default function PrivacyPolicy() {
           Effective Date: 10th Dec 2024
         </p>
         <p className="text-pretty font-mono text-sm text-muted-foreground">
-          Welcome to{" "}
-          <a href="https://www.waqasyounis.com/police-pursuit">
-            Police Pursuit!
+          Welcome to [SHIFTEDPIXEL] and its affiliates (
+          <a href="https://waqasyounis.com/shiftedpixel/police-pursuit">
+            “Police-Pursuit”
           </a>{" "}
-          Your privacy is important to us. This Privacy Policy explains how we
-          handle and protect the information you provide when using our game.
+          or “we” or “our”). Your privacy is important to us. This Privacy
+          Policy explains how we handle and protect the information you provide
+          when using our game.
         </p>
         <br></br>
         <h3 className="text-xl font-bold">Information we collect</h3>
@@ -123,12 +124,12 @@ export default function PrivacyPolicy() {
           <br />
           <br />
           Email:{" "}
-          <a href="mailto:waqasyounis334+policepursuit@gmail.com?subject=Police%20Pursuit%20Privacy%20Policy">
-            waqasyounis334+policepursuit@gmail.com
+          <a href="mailto:waqasyounis334+shiftedpixel@gmail.com">
+            waqasyounis334+shiftedpixel@gmail.com
           </a>
           <br />
           Website:
-          <a href="https://waqasyounis.com/police-pursuit">ShiftedPixel</a>
+          <a href="https://waqasyounis.com/shifted-pixel">ShiftedPixel</a>
           <br />
           <br />
           Thank you for playing Police Pursuit!
