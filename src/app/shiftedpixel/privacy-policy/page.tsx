@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 import GoogleAnalytics from "@/components/google-analytics-event";
-import Test from "@/components/test-component";
 
 export const metadata: Metadata = {
   title: `Privacy Policy | SHIFTEDPIXEL`,
