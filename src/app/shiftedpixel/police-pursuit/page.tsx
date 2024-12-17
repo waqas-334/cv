@@ -12,22 +12,25 @@ export default async function PolicePursuit() {
   // const googlePackageName = "com.androidbull.incognito.browser";
   const appStoreLink =
     "https://apps.apple.com/us/app/police-pursuit-crash-em-all/id6739004227";
-  await delay(300); // 300ms delay
 
-  return (
-    <>
-      <GoogleAnalytics
-        eventName="redirected_to_android"
-        eventParams={{
-          page_title: "Android Redirect",
-          page_path: "/shiftedpixel/police-pursuit",
-        }}
-      />
-      {redirect(
-        `https://play.google.com/store/apps/details?id=${googlePackageName}`,
-      )}
-    </>
+  const analyticsComponent = (
+    <GoogleAnalytics
+      eventName="redirected_to_android"
+      eventParams={{
+        page_title: "Android Redirect",
+        page_path: "/shiftedpixel/police-pursuit",
+      }}
+    />
   );
+
+  // Await a delay of 300ms before redirecting
+  await delay(3000);
+
+  redirect(
+    `https://play.google.com/store/apps/details?id=${googlePackageName}`,
+  );
+
+  return analyticsComponent;
 
   // if (/android/i.test(userAgent)) {
   // <GoogleAnalytics
