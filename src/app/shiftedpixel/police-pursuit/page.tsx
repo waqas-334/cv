@@ -2,12 +2,18 @@ import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import GoogleAnalytics from "@/components/google-analytics-event";
 
-export default function PolicePursuit() {
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export default async function PolicePursuit() {
   const userAgent = headers().get("user-agent") || "";
   const googlePackageName = "com.shiftedpixel.police.pursuit";
   // const googlePackageName = "com.androidbull.incognito.browser";
   const appStoreLink =
     "https://apps.apple.com/us/app/police-pursuit-crash-em-all/id6739004227";
+  await delay(300); // 300ms delay
+
   return (
     <>
       <GoogleAnalytics
