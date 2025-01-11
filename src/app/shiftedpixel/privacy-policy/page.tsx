@@ -129,10 +129,7 @@ export default function PrivacyPolicy() {
             us at:
             <br />
             <br />
-            Email:{" "}
-            <a href="mailto:waqasyounis334+shiftedpixel@gmail.com">
-              waqasyounis334+shiftedpixel@gmail.com
-            </a>
+            Email: <a href="mailto:usmn.nwz@gmail.com">usmn.nwz@gmail.com</a>
             <br />
             Website:
             <a href="https://waqasyounis.com/shifted-pixel">ShiftedPixel</a>
