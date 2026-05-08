@@ -11,7 +11,7 @@ NC='\033[0m'
 
 DOCKERHUB_USER="${DOCKERHUB_USER:-waqas33412345}"
 VERSION="${1:-latest}"
-IMAGE_NAME="cv-web"
+IMAGE_NAME="waqasyounis.com"
 
 echo -e "${BLUE}╔══════════════════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║         CV Web - Build & Push to DockerHub               ║${NC}"
@@ -37,7 +37,7 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 cd "$PROJECT_ROOT"
 
-docker build --platform linux/amd64 --no-cache -t "$DOCKERHUB_USER/$IMAGE_NAME:$VERSION" . || {
+docker build --platform linux/amd64 -t "$DOCKERHUB_USER/$IMAGE_NAME:$VERSION" . || {
     echo -e "${RED}✗ Failed to build image${NC}"
     exit 1
 }
