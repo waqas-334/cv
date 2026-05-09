@@ -105,6 +105,17 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "Browser Tester",
+      techStack: ["Web", "Testing Tool", "Node"],
+      description:
+        "An online tool to test how sophisticated and secure your browser is.",
+      logo: ConsultlyLogo,
+      link: {
+        label: "browsertester",
+        href: "/browser-tester",
+      },
+    },
+    {
       title: "Incognito Browser",
       techStack: [
         "Android",
