@@ -4,42 +4,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A minimalist CV/portfolio website built with Next.js 14, React 18, TypeScript, shadcn/ui, and TailwindCSS. Deployed on Vercel.
+Personal CV/portfolio site (waqasyounis.com) built with Next.js 14 (App Router), React 18, TypeScript, shadcn/ui, and TailwindCSS. It also hosts app landing/privacy pages for mobile projects and a client-side browser-tester tool.
 
 ## Commands
 
 ```bash
 yarn install          # Install dependencies
-yarn dev              # Start development server
-yarn build            # Build for production
-yarn start            # Start production server
-yarn lint             # Run ESLint
+yarn dev              # Dev server (or ./scripts/dev.sh, which installs deps first if needed)
+yarn build            # Production build (standalone output)
+yarn lint             # ESLint (next lint)
+npx tsc --noEmit      # Type-check
 ```
+
+There is no test suite.
+
+`next.config.js` sets `eslint.ignoreDuringBuilds` and `typescript.ignoreBuildErrors`, so `yarn build` succeeds even with lint/type errors. Run `yarn lint` and `npx tsc --noEmit` explicitly to catch them.
 
 ## Architecture
 
-### Single Configuration Source
-All CV/resume content is centralized in `/src/data/resume-data.tsx`. This is the primary file to edit when updating personal information, work history, education, skills, or projects.
+- **Content lives in one file:** `src/data/resume-data.tsx` exports `RESUME_DATA`, which `src/app/page.tsx` renders. Edit content there, not in the page.
+- **Routes:** `src/app/page.tsx` is the CV. `seena-apps/` and `shiftedpixel/` hold static landing, privacy-policy, and support pages for mobile apps (external app listings likely link to these URLs). `browser-tester/` is a `"use client"` page that opens tabs in various ways and saves its config in `localStorage`.
+- **Analytics:** `src/components/googleanalytics.tsx` loads GA4 with a hardcoded tracking ID and is mounted in the root layout. For custom events, render `src/components/google-analytics-event.tsx`, which calls `window.gtag` (typed in `src/app/global.d.ts`). `.env.prod`'s `NEXT_PUBLIC_GOOGLE_ANALYTICS` is not currently read by the code.
+- **Print layout:** the CV page uses Tailwind `print:` variants for a print-friendly layout. Keep them when changing the page.
+- shadcn/ui components live in `src/components/ui/` (config in `components.json`). Path alias `@/*` → `./src/*`.
+- Prettier with `prettier-plugin-tailwindcss` (sorts class names).
 
-### Directory Structure
-- `/src/app/` - Next.js App Router pages
-  - `page.tsx` - Main CV page
-  - `layout.tsx` - Root layout with Google Analytics
-  - `/seena-apps/`, `/shiftedpixel/` - App landing pages for mobile projects
-- `/src/components/` - React components
-  - `/ui/` - shadcn/ui components (avatar, badge, button, card, etc.)
-  - `/icons/` - Custom SVG icon components
-  - `command-menu.tsx` - Keyboard command menu (Cmd+J / Ctrl+J)
-- `/src/lib/utils.ts` - Utility function (`cn` for className merging)
+## Deployment
 
-### Key Patterns
-- Uses shadcn/ui components built on Radix UI primitives
-- Mix of React Server Components and client components (marked with "use client")
-- Print-optimized layout using Tailwind print classes
-- Google Analytics 4 integration with custom event tracking
-- Path alias: `@/*` maps to `./src/*`
+The site is self-hosted with Docker behind nginx, not on Vercel:
 
-### Deployment
-- Primary: Vercel (optimized with `output: 'standalone'` in next.config.js)
-- Docker: `docker-compose.yml` exposes port 1234 → 3000
-- Deploy script: `pull_n_build.sh` pulls latest and rebuilds with Docker
+1. **Locally:** `./scripts/build-and-push.sh [version]` builds a `linux/amd64` image from the multi-stage `Dockerfile` (Next.js standalone `server.js`) and pushes it to DockerHub as `$DOCKERHUB_USER/waqasyounis.com:<version>` (default user `waqas33412345`, default tag `latest`).
+2. **On the server:** `./scripts/deploy.sh [version]` is self-contained. It pulls the image and replaces the `waqasyounis.com` container on host port 1234 → 3000.
+3. nginx (`waqasyounis.com.conf`, TLS via Certbot) proxies the domain to `localhost:1234` and rewrites 404s to `/`.
+
+`docker-compose.yml` (builds locally) and `docker-compose.prod.yml` are older alternatives. The prod compose file still uses the old `cv-web` image name.
